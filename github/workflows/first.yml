@@ -1,0 +1,26 @@
+name: complex
+
+on: push
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: date
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Run a one-line script
+        run: date
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Run a one-line script
+        run: date
+  depends:
+    needs: [ubuntu, windows, macos]
+    runs-on: macos-latest
+    steps:
+      - name: Run a one-line script
+        run: date
